@@ -1,0 +1,59 @@
+<%- include('../partials/headers') %>
+<aside>
+<div id="main">
+        <h1>Welcome to my Portfolio</h1>
+      </div>
+        <aside>
+        <div id="side-menu" class="side-nav">
+         <a class="small material-icons">perm_identity</a>
+          <a href="#">Profile</a>
+          <a href="#">Sandbox</a>
+          <a href="#">Trending</a>
+        </div>    
+</aside>
+<div id="div2">
+    <h1>Create a new Spool</h1>
+   
+<form action="/feed" method="POST"> <label>Language:
+        <li><input type="text" name="Goal" placeholder="Goal" id="goal"></li>
+
+        <select name="language">
+            <option value="C">C</option>
+            <option value="C++">C++</option>
+            <option value="C#">C#</option>
+                    <option value="Java">Java</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="PHP">PHP</option>
+                 <option value="Python">Python</option>
+                 <option value="Ruby">Ruby</option>
+                 <option value="TypeScript">TypeScript</option>
+                 <option value="Other">Other</option>
+        </select>   
+</label><br>
+
+       
+
+<li><textarea name="Input" rows="4" cols="50" placeholder="your code here"></textarea></li>
+
+<input id="addSpool" type="submit" value="Add Spool">
+</form>
+
+   
+    </div>
+   <div id="spoolcard">
+       
+   <% spools.reverse().forEach(function(spool){ %>
+   <textarea> <%= spool.Goal %> </textarea>
+   <textarea> <%= spool.language %> </textarea>
+   <textarea>  <%= spool.Input %> </textarea>
+
+    <form action="/feed/<%= spool._id %>?_method=DELETE" method="POST">
+    <button type="submit" class="btn-small red-text">X</button>
+    </form>
+    <br />
+   <% }); %>
+
+</div> 
+
+
+    <%- include('../partials/footers') %>

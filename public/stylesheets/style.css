@@ -3,6 +3,135 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+    #editor { 
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    .navbar {
+      background-color: #3b5998;
+      overflow: hidden;
+      height: 63px;
+    }
+    
+    aside{
+  display: block;
+  float: left;
+  
+    }
+    .side-nav {
+      padding: 10px, 40px;
+    }
+    
+    .side-nav a {
+      padding: 10px 10px 10px 30px;
+      text-decoration: none;
+      font-size: 22px;
+      color: #ccc;
+      display: block;
+      transition: 0.3s;
+      border: solid black 1px;
+      width: 95px;
+      background-color: #cc3300;
+      color: black;
+      border-radius: 10%;
+    }
+    
+    .side-nav a:hover {
+      color: #fff;
+    }
+  
+
+body{
+  
+ text-align:center;
+ width:100%;
+ margin:0 auto;
+ padding:0px;
+ font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
+ 
+}
+#header img{
+  height: 60px;
+  width: 40px;
+  margin-top: 15px;
+  margin-right: 560px;
+}
+#header_wrapper{
+ width:100%;
+ background-color:#cc3300;
+ margin: auto;
+}
+#header
+{
+ width:980px;
+ margin:0px auto;
+ padding:0px;
+ height:85px;
+ 
+}
+#header li
+{
+ list-style-type:none;
+ float:left;
+ text-align:left;
+ color: black;
+}
+#header #sitename
+{
+ margin-top:25px;
+ color: black;
+}
+#header #sitename a
+{
+ color:black;
+ text-decoration:none;
+ font-size:30px;
+ font-weight:900;
+}
+#header form
+{
+ margin-top:15px;
+ float:right;
+}
+#header form li
+{
+ font-size:13px;
+ margin-left:15px;
+}
+#header a{
+color: black;
+margin-right: 20px;
+}
+
+
+ #div2{
+  background-color:#cc3300;
+  margin: 40px;
+  width: 400px;  
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  margin-left:160px;
+
+ 
+}
+textarea{
+  background-color: white;
+
+}
+input{
+  background-color: white;
+  
+}
+#spoolcard {
+  background-color:#cc3300;
+  margin: 40px;
+  width: 400px;  
+  height: 200px;
+  position: relative;
+  margin-left: 160px;
+  overflow: hidden;
 }

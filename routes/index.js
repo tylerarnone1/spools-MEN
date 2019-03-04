@@ -2,10 +2,11 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 
-
-router.get('/', function(req, res) {
-  res.redirect('/users');
+//home page
+router.get('/', function(req, res, next) {
+  res.render('spools/index')
 });
+
 
 router.get('/auth/google', passport.authenticate(
   'google',
@@ -15,18 +16,18 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect: '/users',
+    successRedirect: '/feed',
     failureRedirect: '/'
   }
 ));
 
 router.get('/logout', function(req, res){
   req.logout();
-  res.redirect('/users');
+  res.redirect('/');
 });
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Spool' });
-});
+
+// router.get('/feed', function(req, res, next) {
+//   // res.render('spools/feed', { title: 'Spool' });
+// });
 
 module.exports = router;
