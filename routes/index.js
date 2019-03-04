@@ -26,6 +26,10 @@ router.get('/logout', function(req, res){
   res.redirect('/');
 });
 
+router.get('/sandbox', function(req, res){
+  res.render('spools/sandbox')
+})
+
 // router.get('/feed', function(req, res, next) {
 //   // res.render('spools/feed', { title: 'Spool' });
 // });
