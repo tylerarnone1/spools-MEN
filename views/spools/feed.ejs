@@ -36,8 +36,8 @@
 
        
 
-<li><textarea name="Input" rows="4" cols="50" placeholder="your code here"></textarea></li>
-
+<li><div id="editor1" name="Input"  placeholder="your code here"></div></li>
+<br>
 <input id="addSpool" type="submit" value="Add Spool">
 </form>
 
@@ -61,6 +61,15 @@
    <% }); %>
    </div>
 </div> <br>
+
+<script src="ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="ace_theme.js" type="text/javascript" charset="utf-8"></script>
+<script src="mode_js.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor1");
+    editor.setTheme("ace/theme/twilight");
+    editor.session.setMode("ace/mode/javascript");
+</script>
 
 
     <%- include('../partials/footers') %>
