@@ -1,6 +1,7 @@
 var passport = require('passport');
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
 var User = require('../models/user');
+var LocalStrategy = require('passport-local');
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_SECRET,
@@ -9,6 +10,7 @@ passport.use(new GoogleStrategy({
 },function(accessToken, refreshToken, profile, cb) {
     console.log('a user has logged in with Oauth');
     User.findOne({'googleId': profile.id}, function(err, user){
+        // console.log(req.user)
         if (err) return cb(err);
         if (user){
             //returning user
@@ -43,3 +45,13 @@ passport.deserializeUser(function(id, done){
     });
 
 });
+passport.use(new LocalStrategy(
+    function(username, password, done) {
+      User.findOne({ username: username }, function (err, user) {
+        if (err) { return done(err); }
+        if (!user) { return done(null, false); }
+        if (!user.verifyPassword(password)) { return done(null, false); }
+        return done(null, user);
+      });
+    }
+  ));

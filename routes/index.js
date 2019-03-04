@@ -1,37 +1,37 @@
-var express = require('express');
-var router = express.Router();
+var router = require('express').Router();
 var passport = require('passport');
 
-//home page
-router.get('/', function(req, res, next) {
-  res.render('spools/index')
+// The root route renders our only view
+router.get('/', function(req, res) {
+  res.redirect('/index');
 });
 
+router.get('/index', function(req, res, next){
+  res.render('spools/index');
+})
+router.get('/sandbox', function(req, res, next){
+  res.render('spools/sandbox');
+})
 
+// Google OAuth login route
 router.get('/auth/google', passport.authenticate(
   'google',
-  {scope: ['profile', 'email'] }
+  { scope: ['profile', 'email'] }
 ));
 
+// Google OAuth callback route
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect: '/feed',
-    failureRedirect: '/'
+    successRedirect : '/feed',
+    failureRedirect : '/'
   }
 ));
 
+// OAuth logout route
 router.get('/logout', function(req, res){
   req.logout();
   res.redirect('/');
 });
-
-router.get('/sandbox', function(req, res){
-  res.render('spools/sandbox')
-})
-
-// router.get('/feed', function(req, res, next) {
-//   // res.render('spools/feed', { title: 'Spool' });
-// });
 
 module.exports = router;

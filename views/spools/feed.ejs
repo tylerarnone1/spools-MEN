@@ -1,7 +1,10 @@
 <%- include('../partials/headers') %>
+
+
+  
 <aside>
 <div id="main">
-        <h1>Welcome to my Portfolio</h1>
+        <h1>The Spool Factory</h1>
       </div>
         <aside>
         <div id="side-menu" class="side-nav">
@@ -14,9 +17,9 @@
 <div id="div2">
     <h1>Create a new Spool</h1>
    
-<form action="/feed" method="POST"> <label>Language:
+<form action="/feed" method="POST"> 
         <li><input type="text" name="Goal" placeholder="Goal" id="goal"></li>
-
+        <label>Language:
         <select name="language">
             <option value="C">C</option>
             <option value="C++">C++</option>
@@ -43,17 +46,21 @@
    <div id="spoolcard">
        
    <% spools.reverse().forEach(function(spool){ %>
-   <textarea> <%= spool.Goal %> </textarea>
-   <textarea> <%= spool.language %> </textarea>
-   <textarea>  <%= spool.Input %> </textarea>
-
+    <div id="card1">
+   <p> <%= spool.Goal %> </p><br>
+   <p> <%= spool.language %> </p><br>
+   <p>  <%= spool.Input %> </p><br>
+   
+  
     <form action="/feed/<%= spool._id %>?_method=DELETE" method="POST">
     <button type="submit" class="btn-small red-text">X</button>
     </form>
     <br />
+    <textarea id="thread" name="thread" rows="2" cols="30">Add to spool</textarea><br>
+    <hr>
    <% }); %>
-
-</div> 
+   </div>
+</div> <br>
 
 
     <%- include('../partials/footers') %>

@@ -5,9 +5,11 @@ var Spool = require('../models/new');
 module.exports={
     addPost,
     readSpools,
-    delPost
+    delPost,
+    
 
 }
+
 
 
 /// adds user input to schema [C]RUD
