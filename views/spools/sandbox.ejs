@@ -8,9 +8,11 @@
 }</div>
     
 <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="ace_theme.js" type="text/javascript" charset="utf-8"></script>
+<script src="mode_js.js" type="text/javascript" charset="utf-8"></script>
 <script>
     var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/monokai");
+    editor.setTheme("ace/theme/twilight");
     editor.session.setMode("ace/mode/javascript");
 </script>
 <%- include('../partials/footers') %>
