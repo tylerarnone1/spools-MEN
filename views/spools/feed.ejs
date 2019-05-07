@@ -8,17 +8,16 @@
       </div>
         <aside>
         <div id="side-menu" class="side-nav">
-         <a class="small material-icons">perm_identity</a>
-          <a href="#">Profile</a>
+          <a href="#" class="small material-icons">perm_identity</a>
           <a href="/Sandbox">Sandbox</a>
           <a href="#">Trending</a>
         </div>    
 </aside>
-<div id="div2">
-    <h1>Create a new Spool</h1>
+<div id="newSpool">
+   
    
 <form action="/feed" method="POST"> 
-        <li><input type="text" name="Goal" placeholder="Goal" id="goal"></li>
+        <input type="text" name="Goal" placeholder="Goal" id="goal">
         <label>Language:
         <select name="language">
             <option value="C">C</option>
@@ -36,8 +35,8 @@
 
        
 
-<li><div id="editor1" name="Input"  placeholder="your code here"></div></li>
-<br>
+<div id="editor1" name="Input"  placeholder="your code here"> Your code Here!!</div>
+
 <input id="addSpool" type="submit" value="Add Spool">
 </form>
 
@@ -46,7 +45,7 @@
    <div id="spoolcard">
        
    <% spools.reverse().forEach(function(spool){ %>
-    <div id="card1">
+    <div id="cards">
    <p> <%= spool.Goal %> </p><br>
    <p> <%= spool.language %> </p><br>
    <p>  <%= spool.Input %> </p><br>
@@ -56,11 +55,12 @@
     <button type="submit" class="btn-small red-text">X</button>
     </form>
     <br />
-    <textarea id="thread" name="thread" rows="2" cols="30">Add to spool</textarea><br>
+    <textarea id="thread" name="thread" rows="auto" cols="30">Add to spool</textarea><br>
     <hr>
    <% }); %>
    </div>
 </div> <br>
+
 
 <script src="ace.js" type="text/javascript" charset="utf-8"></script>
 <script src="ace_theme.js" type="text/javascript" charset="utf-8"></script>
